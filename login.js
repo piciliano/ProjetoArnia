@@ -72,8 +72,14 @@ function validate () {
             register ()
             ValidCamps ()
             invalid.style.display = "none"
+            userName.style.border = '1px solid green'
+        password.style.border = '1px solid green'
+        confirmPassword.style.border = '1px solid green'
     }
     else {
         invalid.style.display = "block"
+        userName.style.border = '1px solid red'
+        password.style.border = '1px solid red'
+        confirmPassword.style.border = '1px solid red'
     }
 }
