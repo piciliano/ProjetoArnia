@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+body{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255,255,255,1) 41%, rgba(115,32,161,1) 57%, rgba(161,32,32,1) 96%);
+    background-size: 300% 300%;
+    animation: transition 10s ease infinite;
+}
+section{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 1px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+span{
+    border: none;
+    position:relative;
+    display: block;
+    width: calc(6.25vw - 1px);
+    height: calc(6.25vw - 1px);
+    background: #222;
+    z-index: 1;
+    transition: 2s;
+    text-align: center;
+}
+span:hover{
+    background: rgb(77, 73, 73);
+    background-size: 300% 300%;
+    animation: transition 10s ease infinite;
+}
+@media (max-width: 900px){
+    span{
+        width: calc(10vw - 1px);
+        height: calc(10vw - 1px);
+        background: #222;
+        z-index: 2;
+    }
+}
+.container1{
+    position: absolute;
+    border: none;
+    width: 50%;
+    height: 60%;
+    z-index: 5;
+    background: rgb(52, 50, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; 
+    box-shadow: 0px 10px 34px 12px rgba(0,0,0,0.6);  
+}
+.intro{
+    position: absolute;
+    z-index: 6;
+    font-size: 70px;
+    display: flex;
+    align-self: flex-start; 
+    margin-top: 5%;
+}
+
+
+.content{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 37px 5px rgba(0,0,0,0.45);
+}
+.space{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;  
+}
+.links{
+    display: flex;
+    justify-content: center;
+}
+a{
+    color:#68519d;
+}
+.spaceInput{
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    font-size: 18px;
+    background: #222;
+    color: white;
+}
+h2{
+    color: #68519d;
+    font-size: 40px;
+    padding: 15px;
+}
+.btn{
+    background: #68519d;
+}
+.btn:hover{
+    background: #9277d2;
+    cursor: pointer;
+}
+
+@media screen and (min-width:800px) and (max-width: 1280px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 40%;
+        height: 50%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+@media screen and (min-width:1280px) and (max-width: 1800px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 30%;
+        height: 40%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+@media screen and (min-width:1800px) and (max-width: 2560px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 20%;
+        height: 50%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+@keyframes transition {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@media screen and (min-width:150px) and (max-width: 400px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 80%;
+        height: 40%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+@media screen and (min-width:200px) and (max-width: 500px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 80%;
+        height: 40%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+@media screen and (min-width:500px) and (max-width: 800px){
+    .container1{
+        position: absolute;
+        border:none ;
+        width: 50%;
+        height: 40%;
+        z-index: 5;
+        border-radius: 15px;
+        background: rgb(52, 50, 50)
+    }
+}
+
+
+p{
+    display: none;
+    padding-bottom: 10px;
+}
+.alertP{
+    color: red;
+}
+.alertS{
+    color: green;
+}
+
+/* @media only screen and (min-width: 800px) and (orientation: landscape){
+    
+} */
+
+.invalid{
+    color: red;
+    display: none;
+    text-align: center;
+}
+
+.validCamps{
+    color: green;
+    display: block;
+    text-align: center;
+}
+.invalidActive{
+    display: block;
+    color:red;
+}
