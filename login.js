@@ -38,7 +38,7 @@ function login () {
             alertP.style.visibility = 'hidden'
             alertS.style.display = 'block'
             setTimeout (() => {
-                window.location.href = 'index.html'
+                window.location.href = 'tasks.html'
             }, 2000)
         }
         else{
