@@ -33,7 +33,7 @@ const closeModal = () => {
     button.classList.remove("btn-danger")
 }
 const getTask = async() => {
-    const apiResponse = await fetch('http://localhost:3000/posts')
+    const apiResponse = await fetch('https://projeto-arnia.herokuapp.com/posts')
     const questions = await apiResponse.json()
     questionsRendering.innerHTML = ''
     questions.forEach(question => {
@@ -55,14 +55,14 @@ const getTask = async() => {
 
 }
 const getQuestion = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/posts/${id}`)
+    const apiResponse = await fetch(`https://projeto-arnia.herokuapp.com/posts/${id}`)
     const question = await apiResponse.json()
     return question
     
 }
 
 const createTask = async (question) => {
-    await fetch('http://localhost:3000/posts', {
+    await fetch('https://projeto-arnia.herokuapp.com/posts', {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -72,7 +72,7 @@ const createTask = async (question) => {
     })   
 }
 const updateTask = async (id, question) => {
-    await fetch(`http://localhost:3000/posts/${id}`, {
+    await fetch(`https://projeto-arnia.herokuapp.com/posts/${id}`, {
         method: "PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -93,7 +93,7 @@ const saveTask = async (question) => {
     getTask()
 }
 const deleteTask = async () => {
-    await fetch(`http://localhost:3000/posts/${valueTemp}`, {
+    await fetch(`https://projeto-arnia.herokuapp.com/posts/${valueTemp}`, {
     method: 'DELETE'
     })
     getTask()
