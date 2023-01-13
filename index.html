@@ -10,25 +10,25 @@
 </head>
 <body>
     <section>
+        <div id="intro" class="intro"> <img src="logo/logo.png" ><p class="introText" id="introText"></p></div>
         <div class="container1">
             <div class="content">
                     <div class="space">                    
-                        <h2>Cadastrar</h2>
+                        <h2>Login</h2>
                     </div>
                     <div class="space">
-                        <input class="spaceInput" placeholder="Usuário" id="userNameC" type="text" >                  
+                        <input class="spaceInput" placeholder="Usuário" id="userName" type="text">                   
                     </div>
                     <div class="space">
-                        <input class="spaceInput" placeholder="Senha" id="passwordC" type="password">                                                
+                        <input class="spaceInput" placeholder="Senha" id="password" type="password">                                                
                     </div> 
-                    <div class="space">
-                        <input class="spaceInput" placeholder="Confirmar Senha" id="passwordB" type="password">                                                
-                    </div> 
-                    <div id="testando">
-                        <p class="invalid" id="invalid2">Usuário deve ter mais de 1 caractere e senhas não podem ser divergentes!</p>
+                    <div class="space links">
+                        <a href="cadastro.html">Cadastrar conta</a>
                     </div>
+                    <p id="alertP" class="alertP">Login ou senha inválida.</p> 
+                    <p id="alertS" class="alertS">Logado com sucesso.</p>
                     <div class="space">
-                        <button onclick="validate()" class="spaceInput btn"  id="send"> Cadastrar</button>
+                        <button onclick="logar()" class="spaceInput btn" id="sendL" >Login</button>
                     </div> 
             </div>
         </div>

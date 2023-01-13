@@ -24,7 +24,7 @@ function registration () {
     )
     localStorage.setItem('users', JSON.stringify(users))
     setTimeout (() => {
-        window.location.href = 'login.html'
+        window.location.href = 'index.html'
     }, 2000)
 }
 
