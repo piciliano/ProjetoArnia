@@ -9,24 +9,26 @@
     <script defer src="login.js"></script>
 </head>
 <body>
-    <section>
+<section>   
         <div class="container1">
             <div class="content">
                     <div class="space">                    
                         <h2>Cadastrar</h2>
                     </div>
                     <div class="space">
-                        <input class="spaceInput" placeholder="Usuário" id="userNameC" type="text" >                  
+                        <input class="spaceInput" placeholder="Usuário" oninput="userValidate ()" id="userNameC" type="text" >                  
+                        <p class="invalid1" id ="invalid1"> Usuário precisa conter no mínimo 3 caracteres!</p>
                     </div>
                     <div class="space">
-                        <input class="spaceInput" placeholder="Senha" id="passwordC" type="password">                                                
+                        <input class="spaceInput" placeholder="Senha" oninput ="passwordValidate()" id="passwordC" type="password">                                                
+                        <p class="invalid3" id="invalid3"> Crie uma senha com pelo menos 6 caracteres!</p>
                     </div> 
                     <div class="space">
-                        <input class="spaceInput" placeholder="Confirmar Senha" id="passwordB" type="password">                                                
+                        <input class="spaceInput" placeholder="Confirmar Senha" oninput="compareValue ()" id="passwordB" type="password">                                                
+                        <p class="invalid2" id="invalid2">Senhas não podem ser divergentes!</p>
+                        <p class="invalid4" id="invalid4"> Preencha os campos corretamente!</p>
+                        <p class="valid" id="valid"> Cadastrado com sucesso!</p>
                     </div> 
-                    <div id="testando">
-                        <p class="invalid" id="invalid2">Usuário deve ter mais de 1 caractere e senhas não podem ser divergentes!</p>
-                    </div>
                     <div class="space">
                         <button onclick="validate()" class="spaceInput btn"  id="send"> Cadastrar</button>
                     </div> 
