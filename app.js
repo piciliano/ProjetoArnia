@@ -32,6 +32,8 @@ const closeModal = () => {
     button.disabled = true
     button.classList.remove("btn-danger")
 }
+
+// 3-
 const getTask = async() => {
     const apiResponse = await fetch('https://projeto-arnia.herokuapp.com/posts')
     const questions = await apiResponse.json()
