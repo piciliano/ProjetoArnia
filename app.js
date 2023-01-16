@@ -37,8 +37,7 @@ const getTask = async() => {
     const questions = await apiResponse.json()
     questionsRendering.innerHTML = ''
     questions.forEach(question => {
-    let date = new Date(question.date)
-    let dataFormatada = date.getDate() + 1 + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    const dataFormatada = alterarData(question.date)
         
         questionsRendering.innerHTML = questionsRendering.innerHTML + `
         <tr>
@@ -54,13 +53,25 @@ const getTask = async() => {
     })
 
 }
+function alterarData(data){
+    let dataTarefa = new Date(data.split('-').join('/'));
+    return dataTarefa.toLocaleDateString('pt-BR');
+}
+
+// 3-
+
+// 4-
 const getQuestion = async (id) => {
     const apiResponse = await fetch(`https://projeto-arnia.herokuapp.com/posts/${id}`)
     const question = await apiResponse.json()
     return question
     
 }
+// 4-
 
+
+
+// 2-
 const createTask = async (question) => {
     await fetch('https://projeto-arnia.herokuapp.com/posts', {
         method: "POST",
@@ -71,6 +82,8 @@ const createTask = async (question) => {
         body: JSON.stringify(question)
     })   
 }
+// 2-
+
 const updateTask = async (id, question) => {
     await fetch(`https://projeto-arnia.herokuapp.com/posts/${id}`, {
         method: "PUT",
@@ -81,6 +94,8 @@ const updateTask = async (id, question) => {
         body: JSON.stringify(question)   
     })
 }
+
+// 3-
 const saveTask = async (question) => {
     if(currentQuestion === null) {
         await createTask(question)
@@ -92,6 +107,7 @@ const saveTask = async (question) => {
     closeModal()
     getTask()
 }
+// 3-
 const deleteTask = async () => {
     await fetch(`https://projeto-arnia.herokuapp.com/posts/${valueTemp}`, {
     method: 'DELETE'
@@ -100,6 +116,8 @@ const deleteTask = async () => {
     modalDelet.style.display = "none"
     valueTemp = true
 }
+
+// 5-
 const editTask = async (id) => {
     currentQuestion = await getQuestion(id)
     document.getElementById('number').value = currentQuestion.number
@@ -109,6 +127,9 @@ const editTask = async (id) => {
     openModal()
     changeTitle ()
 }
+// 5-
+
+// 1- 
 form.addEventListener('submit', (e) => {
     
     e.preventDefault()
@@ -127,6 +148,7 @@ form.addEventListener('submit', (e) => {
 
     saveTask(question)
 })
+// 1-
 const checkValue = () => {
     if (numberValue.value === ""){
         button.disabled = true  
