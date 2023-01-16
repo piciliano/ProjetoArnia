@@ -12,6 +12,9 @@ let valueTemp = true
 function changeTitle () {
     document.getElementById('adcTask').innerHTML = 'Editar tarefa'
 }
+function changeTitleTask () {
+    document.getElementById('adcTask').innerHTML = 'Adicionar nova Tarefa'
+}
 
 const openModalDelet = (id) => {
     modalDelet.style.display = "block"   
@@ -19,6 +22,7 @@ const openModalDelet = (id) => {
 }
 const closeModalDelet = () => {
     modalDelet.style.display = "none"
+    
 }
 const openModal = () => {
     modal.style.display = "block"   
@@ -31,6 +35,7 @@ const closeModal = () => {
     document.getElementById("status").value='' 
     button.disabled = true
     button.classList.remove("btn-danger")
+    changeTitleTask ()
 }
 
 // 3-
